@@ -8,5 +8,13 @@ module.exports = {
       messages: messages,
     });
   },
-  post: (req, res) => {},
+  post: (req, res) => {
+    messages.push({
+      text: req.body.message,
+      user: req.body.user,
+      added: new Date(),
+    });
+
+    res.redirect("/");
+  },
 };

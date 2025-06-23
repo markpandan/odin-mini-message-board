@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <%- include('navbar') %> <% if (page == 'home') { %> <%-
-    include('pages/home', {messages: messages}) %> <% } else if (page == 'new')
-    { %> <%- include('pages/new', {messages: messages}) %> <% } %>
+    <%- include('navbar') %> 
+    
+    <div class="container">
+      <% if (page == 'home') { %> 
+        <%- include('pages/home', {messages: messages}) %> 
+      <% } else if (page == 'new') { %> 
+        <%- include('pages/new', {messages: messages}) %> 
+      <% } else if (page == 'message') { %> 
+        <%- include('pages/message', {messages: messages, index: index}) %> 
+      <% } %>
+    </div>
+
 
     <button class="add-message-btn" onclick="window.location.href = '/new'">
       +

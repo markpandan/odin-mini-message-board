@@ -1,11 +1,8 @@
-<div class="new-container">
-  <form action="post" method="/new">
-    <div class="input-container">
-      <label for="input-user">User:</label>
-      <input id="input-user" type="text" />
-      <label for="input-user">Message:</label>
-      <input id="input-user" type="text" />
-      <button type="submit">Submit</button>
-    </div>
-  </form>
-</div>
+<form method="POST" action="/new">
+  <label for="input-user">User:</label>
+  <input id="input-user" name="user" type="text" />
+  <label for="input-message">Message:</label>
+  <textarea id="input-message" name="message" rows="4"></textarea>
+  <button type="submit">Submit</button>
+</form>
+
