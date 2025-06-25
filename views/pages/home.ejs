@@ -1,9 +1,9 @@
 <ul class="messages-list">
-  <% messages.forEach((value, index) => { %>
-  <li class="message-item" onclick= <%= `window.location.href='/message/${index}'` %> >
-    <h1><%= value.user %></h1>
+  <% messages.forEach((value) => { %>
+  <li class="message-item" onclick= <%= `window.location.href='/message/${value.id}'` %> >
+    <h1><%= value.username %></h1>
     <h5><%= value.added %></h5>
-    <p><%= value.text %></p>
+    <p><%= value.message %></p>
   </li>
   <% }) %>
 </ul>

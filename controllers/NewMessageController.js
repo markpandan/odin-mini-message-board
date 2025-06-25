@@ -1,4 +1,5 @@
-const messages = require("../models/messages.js");
+const messages = require("../db/messages.js");
+const db = require("../db/queries.js");
 
 module.exports = {
   get: (req, res) => {
@@ -8,11 +9,10 @@ module.exports = {
       messages: messages,
     });
   },
-  post: (req, res) => {
-    messages.push({
-      text: req.body.message,
-      user: req.body.user,
-      added: new Date(),
+  post: async (req, res) => {
+    await db.insertMessage({
+      username: req.body.user,
+      message: req.body.message,
     });
 
     res.redirect("/");
