@@ -17,9 +17,6 @@ app.use("/", homeRoute);
 
 const messageInfoRoute = require("./routes/MessageInfoRoute");
 app.use("/message/", messageInfoRoute);
-// app.use("/message/:id", (req, res) => {
-//   res.end()
-// });
 
 const PORT = 8080;
 app.listen(PORT, () => {
